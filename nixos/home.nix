@@ -25,8 +25,8 @@
     pkgs.fd
     pkgs.ripgrep
     pkgs.fzf
-    pkgs.zoxide     # Advanced directory changer
-    pkgs.eza        # Enhanced ls command
+    pkgs.zoxide # Advanced directory changer
+    pkgs.eza # Enhanced ls command
     pkgs.git
     pkgs.banana-cursor
     pkgs.swaynotificationcenter
@@ -84,7 +84,7 @@
 
     # Add the cursor settings here:
     XCURSOR_THEME = "banana-cursor"; # Set the banana cursor theme
-    XCURSOR_SIZE = "24";      # Optional: Set cursor size
+    XCURSOR_SIZE = "24"; # Optional: Set cursor size
 
   };
 
@@ -106,8 +106,14 @@
     # enalbeCompletion = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
-    oh-my-zsh.theme = "robbyrussell";  # You can change this to any theme you like
-    oh-my-zsh.plugins = ["git" "z"];  # Plugins to enhance zsh functionality
+    oh-my-zsh.theme = "robbyrussell"; # You can change this to any theme you like
+    oh-my-zsh.plugins = [ "git" "z" ]; # Plugins to enhance zsh functionality
+  };
+
+  programs.fzf = {
+    enable = true;
+    # keybindings = true; # Enable fzf keybindings (Ctrl-R for history search, etc.)
+    # fuzzyCompletion = true; # Enable fuzzy completion for commands
   };
 
   # Let Home Manager install and manage itself.

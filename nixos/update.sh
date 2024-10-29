@@ -2,4 +2,4 @@
 
 nix-channel update
 nix flake update
-sudo nixos-rebuild switch --flake .
+nixos-rebuild switch --flake . --use-remote-sudo

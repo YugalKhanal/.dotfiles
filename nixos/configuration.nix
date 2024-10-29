@@ -89,7 +89,8 @@
   services.blueman.enable = true;
 
   # Add the DBus service configuration
-  # services.dbus.enable = true;
+  services.dbus.enable = true;
+  services.udisks2.enable = true;
   # services.dbus.packages = [ pkgs.bluez ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -121,12 +122,29 @@
   users.users.yugalkhanal = {
     isNormalUser = true;
     description = "yugalkhanal";
-    extraGroups = [ "networkmanager" "wheel" "wireshark" "docker"];
+    # extraGroups = [ "users" "make" "network" "networkmanager" "wheel" "wireshark" "docker" ];
+    extraGroups = [
+      "users"
+      "networkmanager"
+      "wheel"
+      "wireshark"
+      "docker"
+      "audio"
+      "video"
+      "input"
+      "systemd-journal"
+      "disk"
+      "storage"
+      "plugdev"
+    ];
     packages = with pkgs; [
       #  thunderbird
     ];
     shell = pkgs.zsh;
   };
+
+  security.sudo.wheelNeedsPassword = false;
+
 
   # Setting nerdfont
 
@@ -142,6 +160,7 @@
     enable = true;
     protontricks.enable = true;
   };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -185,7 +204,6 @@
     pkgs.htop
     pkgs.fd
     pkgs.bat
-    pkgs.fzf
     pkgs.lazygit
     pkgs.discord
     pkgs.yq
@@ -193,6 +211,7 @@
     pkgs.libreoffice
     pkgs.fastfetch
     pkgs.xfce.thunar
+    pkgs.gvfs
     pkgs.waybar
     pkgs.spicetify-cli
     pkgs.yt-dlp
