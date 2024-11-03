@@ -31,6 +31,9 @@
     pkgs.banana-cursor
     pkgs.swaynotificationcenter
     pkgs.inetutils
+    pkgs.wlsunset
+    pkgs.wlr-randr
+    pkgs.networkmanagerapplet
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
