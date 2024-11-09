@@ -17,24 +17,25 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.bat
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.fzf
-    pkgs.zoxide # Advanced directory changer
-    pkgs.eza # Enhanced ls command
-    pkgs.git
-    pkgs.banana-cursor
-    pkgs.swaynotificationcenter
-    pkgs.inetutils
-    pkgs.wlsunset
-    pkgs.wlr-randr
-    pkgs.networkmanagerapplet
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    bat
+    fd
+    ripgrep
+    fzf
+    zoxide # Advanced directory changer
+    eza # Enhanced ls command
+    git
+    banana-cursor
+    swaynotificationcenter
+    inetutils
+    wlsunset
+    wlr-randr
+    networkmanagerapplet
+    tailscale
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

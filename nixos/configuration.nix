@@ -171,78 +171,79 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pkgs.lxqt.lxqt-archiver # GUI archive manager that works well with Wayland
-    pkgs.zip
-    pkgs.unzip
-    pkgs.gnumake
-    pkgs.vim
-    pkgs.wget
-    pkgs.neovim
-    pkgs.firefox
-    pkgs.alacritty
-    pkgs.kitty
-    pkgs.brave
-    pkgs.tmux
-    pkgs.git
-    pkgs.inetutils
-    pkgs.docker
-    pkgs.gcc
-    pkgs.clang
-    pkgs.glib
-    pkgs.go
-    pkgs.lua
-    pkgs.nodejs_22
-    pkgs.python3
-    pkgs.luajit
-    pkgs.rustc
-    pkgs.cargo
-    pkgs.ripgrep
-    pkgs.zsh
-    pkgs.zathura
-    pkgs.texliveFull
-    pkgs.nmap
-    pkgs.htop
-    pkgs.fd
-    pkgs.bat
-    pkgs.lazygit
-    pkgs.discord
-    pkgs.yq
-    pkgs.wireshark
-    pkgs.libreoffice
-    pkgs.fastfetch
-    pkgs.xfce.thunar
-    pkgs.gvfs
-    pkgs.waybar
-    pkgs.spicetify-cli
-    pkgs.yt-dlp
-    pkgs.mpv
-    pkgs.ncspot
-    pkgs.transmission_4-gtk
-    pkgs.wlogout
-    pkgs.wttrbar
-    pkgs.libnotify
-    pkgs.swww
-    pkgs.rofi-wayland
-    pkgs.rofi-bluetooth
-    pkgs.wofi
-    pkgs.hyprlock
-    pkgs.killall
-    pkgs.OVMF
-    # pkgs.blueman # bluetooth
-    pkgs.bluez
-    pkgs.bluez-tools
-    pkgs.gtk2
-    pkgs.gtk3
-    pkgs.gtk4
-    pkgs.grim
-    pkgs.slurp
-    pkgs.wl-clipboard
-    pkgs.networkmanagerapplet
-    pkgs.spotify
-    pkgs.playerctl
-    pkgs.banana-cursor
-    pkgs.pavucontrol
-    pkgs.networkmanagerapplet
+    lxqt.lxqt-archiver # GUI archive manager that works well with Wayland
+    zip
+    unzip
+    gnumake
+    vim
+    wget
+    neovim
+    firefox
+    alacritty
+    kitty
+    brave
+    tmux
+    git
+    inetutils
+    docker
+    gcc
+    clang
+    glib
+    go
+    lua
+    nodejs_22
+    python3
+    luajit
+    rustc
+    cargo
+    ripgrep
+    zsh
+    zathura
+    texliveFull
+    nmap
+    htop
+    fd
+    bat
+    lazygit
+    discord
+    yq
+    wireshark
+    jetbrains.goland
+    libreoffice
+    certbot
+    fastfetch
+    xfce.thunar
+    gvfs
+    waybar
+    spicetify-cli
+    yt-dlp
+    mpv
+    ncspot
+    transmission_4-gtk
+    wlogout
+    wttrbar
+    libnotify
+    swww
+    rofi-wayland
+    rofi-bluetooth
+    wofi
+    hyprlock
+    killall
+    OVMF
+    bluez
+    bluez-tools
+    gtk2
+    gtk3
+    gtk4
+    grim
+    slurp
+    wl-clipboard
+    networkmanagerapplet
+    spotify
+    playerctl
+    banana-cursor
+    pavucontrol
+    networkmanagerapplet
   ];
 
   programs.hyprland = {
@@ -285,7 +286,7 @@
 
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [80 443 8080 8000 7000 5000 3000 3030];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
