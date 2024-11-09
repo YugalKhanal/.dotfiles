@@ -187,7 +187,17 @@
     inetutils
     docker
     gcc
+    pyright
+    texlab
+    gopls
+    hyprls
+    typescript-language-server
     clang
+    nixd
+    clang-tools
+    lua-language-server
+    stylua
+    nixpkgs-fmt
     glib
     go
     lua
