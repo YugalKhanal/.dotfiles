@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [ ./sh.nix ];
+  # imports = [ /home/yugalkhanal/.dotfiles/nixos/sh.nix ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "yugalkhanal";
