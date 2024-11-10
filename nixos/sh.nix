@@ -20,7 +20,7 @@
     oh-my-zsh.plugins = [ "git" "z" ]; # Plugins to enhance zsh functionality
   };
 
-  programs.bash.enable = true;
+  # programs.bash.enable = true;
 
   programs.fzf = {
     enable = true;
