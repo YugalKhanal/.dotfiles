@@ -9,8 +9,6 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./vm.nix
-      # ./gpu-passthrough.nix
     ];
 
   # Bootloader.
@@ -164,6 +162,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
@@ -178,6 +177,7 @@
     vim
     wget
     neovim
+    lazygit
     firefox
     alacritty
     kitty
@@ -187,11 +187,19 @@
     inetutils
     docker
     gcc
+    cmake
     pyright
     texlab
     gopls
     hyprls
+    mpi
+    pkg-config
+    llvmPackages_12.openmp
+    python312Packages.numpy
+    python312Packages.matplotlib
     typescript-language-server
+    texlivePackages.latexindent
+    texlab
     clang
     nixd
     clang-tools
@@ -216,6 +224,7 @@
     bat
     lazygit
     discord
+    vesktop
     yq
     wireshark
     jetbrains.goland
@@ -253,7 +262,6 @@
     playerctl
     banana-cursor
     pavucontrol
-    networkmanagerapplet
   ];
 
   programs.hyprland = {
@@ -296,7 +304,7 @@
 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [80 443 8080 8000 7000 5000 3000 3030];
+  networking.firewall.allowedTCPPorts = [ 80 443 8080 8000 7000 5000 3000 3030 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
