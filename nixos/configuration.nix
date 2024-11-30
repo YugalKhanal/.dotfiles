@@ -168,8 +168,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bottles
-    bottles-unwrapped
+    stow
     lxqt.lxqt-archiver
     zip
     unzip
