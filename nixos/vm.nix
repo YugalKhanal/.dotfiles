@@ -13,11 +13,12 @@
     qemu
     virt-manager
     virt-viewer
-    spice spice-gtk
+    spice
+    spice-gtk
     spice-protocol
     win-virtio
     win-spice
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
   ];
 
   # Manage the virtualisation services

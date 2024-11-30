@@ -4,6 +4,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
+      hi = "echo 'Hello, world!'";
       ls = "eza --icons";
       ll = "eza -l --icons";
       la = "eza -la --icons";
@@ -20,7 +21,7 @@
     oh-my-zsh.plugins = [ "git" "z" ]; # Plugins to enhance zsh functionality
   };
 
-  # programs.bash.enable = true;
+  programs.bash.enable = true;
 
   programs.fzf = {
     enable = true;

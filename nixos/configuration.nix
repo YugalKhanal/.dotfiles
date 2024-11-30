@@ -9,6 +9,8 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./gaming.nix
+      ./vm.nix
     ];
 
   # Bootloader.
@@ -57,7 +59,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver.videoDrivers = [ "nvidia" ];
   # services.displayManager.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
 
@@ -154,10 +156,6 @@
   # Install firefox.
   # programs.firefox.enable = true;
   programs.wireshark.enable = true;
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -170,7 +168,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    lxqt.lxqt-archiver # GUI archive manager that works well with Wayland
+    bottles
+    bottles-unwrapped
+    lxqt.lxqt-archiver
     zip
     unzip
     gnumake
@@ -206,6 +206,8 @@
     lua-language-server
     stylua
     nixpkgs-fmt
+    ruff
+    black
     glib
     go
     lua
@@ -251,6 +253,7 @@
     OVMF
     bluez
     bluez-tools
+    qbittorrent
     gtk2
     gtk3
     gtk4
@@ -277,14 +280,6 @@
     NIXOS_OZONE_WL = "1";
     XCURSOR_THEME = "banana-cursor";
     XCURSOR_SIZE = "24";
-  };
-
-  hardware = {
-    # Opengl
-    graphics.enable = true;
-    # most wayland compositors need this
-    nvidia.modesetting.enable = true;
-    nvidia.open = true;
   };
 
   xdg.portal.enable = true;
